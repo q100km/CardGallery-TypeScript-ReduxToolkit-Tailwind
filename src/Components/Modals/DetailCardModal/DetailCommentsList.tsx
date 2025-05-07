@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux'
 import DetailModalForm from './DetailModalForm'
 import { selectCommentsArray } from '../../../redux/slices/cardSlice'
-import { IComment } from '../../../Types/modalsTypes'
+import { IComment } from '../../../Types/modalsCommentTypes'
 
 const DetailCommentsList = () => {
   const commentsArray = useSelector(selectCommentsArray)
   return (
     <div className='flex flex-col gap-4 w-82 max-h-140 overflow-auto bg-white/10 rounded-xl shadow-xl p-4'>
-      {/* add com form  */}
+      {/* add comment form  */}
       <DetailModalForm />
 
       {commentsArray.map((comment: IComment) => {

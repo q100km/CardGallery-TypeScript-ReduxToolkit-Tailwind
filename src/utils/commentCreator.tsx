@@ -1,4 +1,4 @@
-import { IComment } from '../Types/modalsTypes'
+import { IComment } from '../Types/modalsCommentTypes'
 
 const commentCreator = (userName: string, comment: string): IComment => ({
   id: new Date().getTime(),

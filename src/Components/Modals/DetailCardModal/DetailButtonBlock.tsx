@@ -2,7 +2,11 @@ import { useDispatch } from 'react-redux'
 import { Dispatch } from '../../../Types/сardSliceTypes'
 import { toggleFaforite, toggleLike } from '../../../redux/slices/cardSlice'
 import { FC } from 'react'
-import { DetailButtonBlockProps } from '../../../Types/modalsTypes'
+import { ICard } from '../../../Types/сardsTypes'
+
+type DetailButtonBlockProps = {
+  card: ICard
+}
 
 const DetailButtonBlock: FC<DetailButtonBlockProps> = ({ card }) => {
   const dispatch = useDispatch<Dispatch>()

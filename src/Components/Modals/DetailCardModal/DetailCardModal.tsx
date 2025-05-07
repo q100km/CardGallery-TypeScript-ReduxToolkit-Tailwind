@@ -1,13 +1,21 @@
 import DetailCommentsList from './DetailCommentsList'
 import DetailButtonBlock from './DetailButtonBlock'
 import { FC } from 'react'
-import { DetailCardModalProps } from '../../../Types/modalsTypes'
+import { ICard } from '../../../Types/сardsTypes'
+
+export type DetailCardModalProps = {
+  card: ICard
+  close: () => void
+}
 
 const DetailCardModal: FC<DetailCardModalProps> = ({ card, close }) => {
   //
   return (
     <div className='fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center'>
-      <div onClick={(e) => e.stopPropagation()} className='bg-white/50 relative p-6 rounded-xl shadow-lg flex flex-row gap-5 w-225 h-150'>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className='bg-white/50 relative p-6 rounded-xl shadow-lg flex flex-row gap-5 w-225 h-150'
+      >
         {/* Левая часть */}
         {/* close btn */}
         <button

@@ -3,7 +3,7 @@ import { IInitialState } from '../../Types/сardSliceTypes'
 import { PayloadAction } from '@reduxjs/toolkit'
 import { ICard } from '../../Types/сardsTypes'
 import { RootState } from '../../Types/сardSliceTypes'
-import { IComment } from '../../Types/modalsTypes'
+import { IComment } from '../../Types/modalsCommentTypes'
 
 const initialState: IInitialState = {
   cardsArray: [],
@@ -45,6 +45,7 @@ const cardSlice = createSlice({
 export const selectCardsArray = (state: RootState) => state.card.cardsArray
 export const selectCommentsArray = (state: RootState) => state.card.commentsArray
 
-export const { addNewCard, deleteCard, addNewComment, toggleFaforite, toggleLike } = cardSlice.actions
+export const { addNewCard, deleteCard, addNewComment, toggleFaforite, toggleLike } =
+  cardSlice.actions
 
 export default cardSlice.reducer

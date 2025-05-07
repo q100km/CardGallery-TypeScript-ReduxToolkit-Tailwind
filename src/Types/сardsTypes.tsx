@@ -1,4 +1,4 @@
-import { IComment } from './modalsTypes'
+import { IComment } from './modalsCommentTypes'
 
 export interface ICard {
   id: number
@@ -9,8 +9,4 @@ export interface ICard {
   date: string
   like: boolean
   comments: IComment[]
-}
-
-export type CardProps = {
-  card: ICard
 }

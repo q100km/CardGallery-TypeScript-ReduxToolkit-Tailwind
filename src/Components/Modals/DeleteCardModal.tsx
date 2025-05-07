@@ -1,7 +1,17 @@
 import { FC } from 'react'
-import { DeleteCardModalProps } from '../../Types/modalsTypes'
+import {} from '../../Types/modalsCommentTypes'
 
-const DeleteCardModal: FC<DeleteCardModalProps> = ({ cardIdToDelete, confirmDelete, cancelDelete }) => {
+type DeleteCardModalProps = {
+  cardIdToDelete: number
+  confirmDelete: (id: number) => void
+  cancelDelete: () => void
+}
+
+const DeleteCardModal: FC<DeleteCardModalProps> = ({
+  cardIdToDelete,
+  confirmDelete,
+  cancelDelete,
+}) => {
   return (
     <div className='fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center'>
       <div className='bg-white/70 p-6 rounded-xl shadow-lg max-w-md w-full'>

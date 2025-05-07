@@ -1,6 +1,6 @@
 import { ICard } from './сardsTypes'
 import store from '../redux/store'
-import { IComment } from './modalsTypes'
+import { IComment } from './modalsCommentTypes'
 
 export interface IInitialState {
   cardsArray: ICard[]

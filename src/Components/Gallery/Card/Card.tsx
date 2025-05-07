@@ -1,10 +1,14 @@
 import { FC, useState } from 'react'
-import { CardProps } from '../../../Types/сardsTypes'
+import { ICard } from '../../../Types/сardsTypes'
 import DetailCardModal from '../../Modals/DetailCardModal/DetailCardModal'
 import DeleteCardModal from '../../Modals/DeleteCardModal'
 import { useDispatch } from 'react-redux'
 import { deleteCard } from '../../../redux/slices/cardSlice'
 import { Dispatch } from '../../../Types/сardSliceTypes'
+
+type CardProps = {
+  card: ICard
+}
 
 const Card: FC<CardProps> = ({ card }) => {
   const [showDetail, setShowDetail] = useState(false)
@@ -26,8 +30,15 @@ const Card: FC<CardProps> = ({ card }) => {
 
   return (
     <div className='relative bg-white shadow rounded-xl h-90 flex flex-col text-xl font-semibold overflow-hidden'>
-      <div onClick={() => setShowDetail(true)} className='bg-cyan-400 w-full h-[70%] text-center cursor-pointer'>
-        <img src={card.image} alt={card.title} className='object-cover w-full h-full rounded-t-xl' />
+      <div
+        onClick={() => setShowDetail(true)}
+        className='bg-cyan-400 w-full h-[70%] text-center cursor-pointer'
+      >
+        <img
+          src={card.image}
+          alt={card.title}
+          className='object-cover w-full h-full rounded-t-xl'
+        />
       </div>
 
       <div className='bg-green-600/10 w-full h-[30%]'>
@@ -53,7 +64,13 @@ const Card: FC<CardProps> = ({ card }) => {
       <div className={favoriteIconStyles}> * </div>
 
       {/* delete modal */}
-      {showDeleteModal && <DeleteCardModal cardIdToDelete={card.id} confirmDelete={handleDelete} cancelDelete={() => setShowDeleteModal(false)} />}
+      {showDeleteModal && (
+        <DeleteCardModal
+          cardIdToDelete={card.id}
+          confirmDelete={handleDelete}
+          cancelDelete={() => setShowDeleteModal(false)}
+        />
+      )}
 
       {/* detail modal */}
       {showDetail && <DetailCardModal card={card} close={() => setShowDetail(false)} />}

@@ -14,8 +14,8 @@ import { Dispatch } from '../../../Types/сardSliceTypes'
 const Filters = () => {
   const filterInputValue = useSelector(selectFilterInputValue)
   const filterDiscriptionValue = useSelector(selectFilterDiscriptionValue)
-  const dispatch = useDispatch<Dispatch>()
   const onlyFavorite = useSelector(selectOnlyFavorite)
+  const dispatch = useDispatch<Dispatch>()
 
   return (
     <div className='flex items-center gap-4 p-4 bg-white shadow rounded mt-1 py-7 justify-between'>
