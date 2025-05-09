@@ -31,7 +31,7 @@ const filterSlice = createSlice({
   },
 })
 
-export const selectFilterInputValue = (state: RootState) => state.filter.filterTitleValue
+export const selectFilterTitleValue = (state: RootState) => state.filter.filterTitleValue
 export const selectFilterDiscriptionValue = (state: RootState) => state.filter.filterDiscriptionValue
 export const selectOnlyFavorite = (state: RootState) => state.filter.onlyFavorite
 

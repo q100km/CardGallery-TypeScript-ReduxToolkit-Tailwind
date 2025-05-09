@@ -2,7 +2,7 @@ import CreateNewCardForm from './CreateNewCardForm.tsx/CreateNewCardForm'
 import Filters from './Filters/Filters'
 import CardList from './CardsList/CardList'
 
-const Main = () => {
+const Gallery = () => {
   return (
     <div className='bg-white w-11/12 min-h-screen mx-auto rounded'>
       <CreateNewCardForm />
@@ -12,4 +12,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Gallery
